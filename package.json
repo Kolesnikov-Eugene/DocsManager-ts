@@ -1,0 +1,52 @@
+{
+  "name": "docsmanager-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "webpack --config webpack.config.js"
+  },
+  "build": {
+    "appId": "com.example.electron-react",
+    "files": [
+      "dist/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kolesnikov-Eugene/DocsManager-ts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kolesnikov-Eugene/DocsManager-ts/issues"
+  },
+  "homepage": "https://github.com/Kolesnikov-Eugene/DocsManager-ts#readme",
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^6.2.1",
+    "@mui/x-data-grid": "^7.23.3",
+    "electron": "^33.2.1",
+    "path-browserify": "^1.0.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "electron-builder": "^25.1.8",
+    "html-webpack-plugin": "^5.6.3",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.7.2",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
+  }
+}
