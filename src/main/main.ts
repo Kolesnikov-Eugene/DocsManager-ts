@@ -8,8 +8,8 @@ app.on("ready", () => {
     width: 800,
     height: 600,
     webPreferences: {
-    //   preload: path.join(__dirname, "preload.js"), // Optional if using a preload script
-      nodeIntegration: true, // Allow Node.js modules in the renderer process
+      // preload: path.join(__dirname, "preload.js"), // Optional if using a preload script
+      nodeIntegration: false, // Allow Node.js modules in the renderer process
     },
   });
 

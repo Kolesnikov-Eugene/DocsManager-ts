@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>RichEdit</h1>
+    <button id="openFile">Open File</button>
+    <button id="saveFile">Save File</button>
+    <div id="editor" style="border: 1px solid #ccc; height: 300px;"></div>
+
+    <script>
+      import { HtmlEditor } from 'devextreme-react/html-editor';
+
+      let editor = null;
+
+      document.addEventListener('DOMContentLoaded', () => {
+        editor = new HtmlEditor({
+          element: document.getElementById('editor'),
+          height: 300,
+          toolbar: {
+            items: ['undo', 'redo', 'separator', 'bold', 'italic', 'underline'],
+          },
+        });
+      });
+
+      document.querySelector('#openFile').addEventListener('click', async () => {
+        const fileData = await window.childApi.readFile();
+        if (fileData) {
+          editor.option('value', fileData.content);
+        }
+      });
+
+      document.querySelector('#saveFile').addEventListener('click', async () => {
+        const content = editor.option('value');
+        const filePath = await window.childApi.saveFile(content);
+        if (filePath) {
+          alert(`File saved at ${filePath}`);
+        }
+      });
+    </script>
+  </body>
+</html>
+
+
+<!-- second ver -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Link to Local CSS -->
+    <link rel="stylesheet" href="./assets/css/dx.light.css" />
+    <!-- DevExpress JavaScript -->
+    <script src="./assets/js/dx.all.js"></script>
+  </head>
+  <body>
+    <h1>RichEdit</h1>
+    <button id="openFile">Open File</button>
+    <button id="saveFile">Save File</button>
+    <div id="editor" style="border: 1px solid #ccc; height: 400px; margin-top: 20px;"></div>
+
+    <!-- RichEdit Logic -->
+    <script src="./assets/js/richEdit.js"></script>
+  </body>
+</html>

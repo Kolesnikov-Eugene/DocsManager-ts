@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Main Window</h1>
+    <button id="openEditor">Open RichEdit</button>
+
+    <script>
+      document.querySelector('#openEditor').addEventListener('click', () => {
+        window.api.openRichEdit();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+<script>
+    // Send a message to the main process
+    document.querySelector('#sendToMain').addEventListener('click', () => {
+      window.childApi.sendMessage('message-from-child', { message: 'Hello from Child!' });
+    });
+  
+    // Receive messages
+    window.childApi.onMessage('message-to-child', (data) => {
+      console.log('Received in Child:', data);
+    });
+  </script>
+  <button id="sendToMain">Send to Main</button>
