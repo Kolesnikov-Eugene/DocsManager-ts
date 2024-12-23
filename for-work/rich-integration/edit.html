@@ -59,3 +59,24 @@
     <script src="./assets/js/richEdit.js"></script>
   </body>
 </html>
+
+
+<!-- or preload _scrtipt -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./assets/css/dx.light.css" />
+    <script src="./assets/js/dx.all.js"></script>
+  </head>
+  <body>
+    <h1>RichEdit</h1>
+    <div id="rich-container" style="border: 1px solid #ccc; height: 500px;"></div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // Initialize the RichEdit control using the exposed API
+        window.richeditAPI.initRichEdit('rich-container');
+      });
+    </script>
+  </body>
+</html>
