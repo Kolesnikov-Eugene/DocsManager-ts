@@ -47,3 +47,20 @@ ipcMain.on('save-file', async (event, byteArray) => {
     const result = await sendFileToBackend(byteArray); // Send to backend
     console.log('File saved successfully:', result);
 });
+
+// BYTES
+const fs = require('fs');
+
+const emptyRtfString = "{\\rtf1}";
+const encoder = new TextEncoder();
+const emptyRtfBytes = encoder.encode(emptyRtfString);
+
+fs.writeFileSync('empty.rtf', Buffer.from(emptyRtfBytes)); // Use Buffer.from for Node.js file system
+console.log("Empty RTF file created.");
+
+// ANOTHER
+const emptyRtfString1 = "{\\rtf1}";
+const encoder1 = new TextEncoder();
+const emptyRtfBytes1 = encoder.encode(emptyRtfString1);
+
+console.log(emptyRtfBytes1); // Output: Uint8Array [123, 92, 114, 116, 102, 49, 125] (ASCII codes)
