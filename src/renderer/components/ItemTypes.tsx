@@ -5,3 +5,9 @@ export interface Folder {
     isExpanded?: boolean;
     children?: Folder[];
   }
+
+// ItemTypes.ts
+export const ItemTypes = {
+  FOLDER: 'folder',
+  DOCUMENT: 'document',
+};
